@@ -1,7 +1,7 @@
 # CPSC 479 PROJECT 2 
 Erick Juarez juarez.erick16@csu.fullerton.edu
 ## Problem 
-This program was inspired by my passion for long distance running. I've been recording most of my runs with a GPS watch for the past 4 years, and I gathered data for over 1600 runs. The problem that I will be trying to solve is classifying these runs based on the run type. Training is different every day, but runnig produces very similar data for all run types. For simplicity, I decided to only classify 3 types of runs: Distance runs, Long Runs, and Workots. I decided to use a K-Nearest Neighbor algorithm because of its simplicity. I also decided to use mpi4py as the MPI standard for multicore processing. 
+This program was inspired by my passion for long distance running. I've been recording most of my runs with a GPS watch for the past 4 years, and I gathered data for over 1600 runs. The problem that I will be trying to solve is classifying these runs based on the run type. Training is different every day, but runnig produces very similar data for all run types. For simplicity, I decided to only classify 3 types of runs: Distance runs, Long Runs, and Workouts. I decided to use a K-Nearest Neighbor algorithm because of its simplicity. I also decided to use mpi4py as the MPI standard for multicore processing. 
 
 ![alt text](https://github.com/EvilErick16/knn-running/blob/master/classes.JPG)
 
