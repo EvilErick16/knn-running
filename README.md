@@ -50,3 +50,6 @@ Then run the classifier:
 ```mpirun -n 4 python knn-classifier.py```
 
 replace *4* with the number of processors you wish to run the program with 
+
+Sample output: 
+![alt text](https://github.com/EvilErick16/knn-running/blob/master/project_output.png)
