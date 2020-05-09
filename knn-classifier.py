@@ -24,7 +24,7 @@ training_set = []
 partitions = []
 testing_set = []
 distances = []
-k = 9
+k = 15
 
 # Tasks for the master rank
 if rank == 0: 
@@ -57,7 +57,6 @@ testing_set = comm.bcast(testing_set, root=0)
 # Each process calculataes distance from testing data to training data 
 for point in partitions:
     distances.append(getDistance(point, testing_set[0]))
-#print(rank, "-", partitions[0])
 
 # Gather results from worker processes 
 distances = comm.gather(distances, root=0)
@@ -96,10 +95,17 @@ if rank == 0:
             classes[2] += 1
     predicted = classes.index(max(classes))
     actual = int(testing_set[0][4])
-    print("--------------------------------")
-    print("Training points -", len(dist_vect))
-    print("              K -", k)
-    print("      Predicted -", predicted)
-    print("         Actual -", actual)
-    print("--------------------------------")
- 
+
+    # print results
+    print("---------------------------------------------")
+    print("     Training points -", len(dist_vect))
+    print("                   K -", k)
+    if classes[0] != 0: 
+        print("Neighbors in class 0 -", classes[0])
+    if classes[1] != 0:
+        print("Neighbors in class 1 -", classes[1])
+    if classes[2] != 0:
+        print("Neighbors in class 2 -", classes[2])
+    print("     Predicted class -", predicted)
+    print("        Actual class -", actual)
+    print("---------------------------------------------")
